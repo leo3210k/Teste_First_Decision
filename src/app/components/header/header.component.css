@@ -65,4 +65,7 @@
   background-color: var(--perfume);
 }
 
+.header__profile-name {
+  font-weight: 500;
+}
 

@@ -1,5 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --alice-blue: #F7FBFF;
+  --gull-gray: #98a5b9;
+  --perfume: #dcd3fb;
+  --royal-blue: #5047ed;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
 }

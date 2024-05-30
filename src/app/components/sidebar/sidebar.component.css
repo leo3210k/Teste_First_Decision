@@ -7,3 +7,13 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.sidebar__image {
+  width: 1.5rem;
+  flex-grow: 1;
+}
+
+.sidebar__image--larger {
+  width: 2rem;
+  flex-grow: 3;
+}

@@ -40,3 +40,21 @@
   width: 1.5rem;
 }
 
+.header__notification {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__notification-sign {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 10px;
+  height: 10px;
+
+  border-radius: 2rem;
+  background-color: var(--royal-blue);
+}
+

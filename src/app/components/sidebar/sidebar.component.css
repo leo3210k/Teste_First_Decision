@@ -1,0 +1,9 @@
+.sidebar {
+  height: 70%;
+
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

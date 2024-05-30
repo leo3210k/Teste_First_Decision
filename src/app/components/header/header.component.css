@@ -20,4 +20,13 @@
   background-color: var(--alice-blue);
 }
 
+.header__input {
+  flex-grow: 1;
+  border: none;
+  background-color: var(--alice-blue);
+}
+
+.header__input::placeholder {
+  color: var(--gull-gray);
+}
 

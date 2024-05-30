@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 80px 1fr;
   grid-template-columns: 100px 1fr;
   grid-template-areas: 
     "sidebar header"

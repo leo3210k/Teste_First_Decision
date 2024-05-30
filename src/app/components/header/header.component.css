@@ -69,3 +69,7 @@
   font-weight: 500;
 }
 
+.header__image--large {
+  width: 2rem;
+}
+

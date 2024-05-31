@@ -5,6 +5,7 @@
   --perfume: #dcd3fb;
   --royal-blue: #5047ed;
   --aqua-haze: #f6f8fa;
+  --catskill-white: #F9FAFC;
 }
 
 * {
@@ -17,3 +18,4 @@
 img {
   max-width: 100%;
 }
+html, body { height: 100%; }

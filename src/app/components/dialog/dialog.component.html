@@ -1,1 +1,99 @@
-<p>dialog works!</p>
+<div class="dialog">
+  <h2 class="dialog__title">Adicionar usuário</h2>
+  <h3 class="dialog__description">
+    Aqui você adiciona e configura os usuários que fazem parte da sua equipe
+  </h3>
+  <form class="dialog__form" [formGroup]="userForm" (ngSubmit)="submitForm()">
+    <div class="dialog__group">
+      <div class="dialog__field">
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name" formControlName="name" placeholder="Digite seu nome...">
+        <div *ngIf="f.name.errors?.required && f.name.touched" class="error-message">
+          O campo nome é obrigatório.
+        </div>
+      </div>
+      <div class="dialog__field">
+        <label for="surname">Sobrenome</label>
+        <input type="text" name="surname" id="surname" formControlName="surname" placeholder="Digite seu sobrenome...">
+        <div *ngIf="f.surname.errors?.required && f.surname.touched" class="error-message">
+          O campo sobrenome é obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="dialog__group">
+      <div class="dialog__field">
+        <label for="phone">Telefone <span class="optional">- Opcional</span></label>
+        <div class="phone__field">
+          <mat-select class="phone__select" [(value)]="selectedCountry">
+            <mat-option *ngFor="let country of countries" [value]="country">
+              <img [src]="country.flag" alt="{{ country.name }}" width="24" height="16" style="margin-right: 8px;">
+              {{ country.name }} ({{ country.code }})
+            </mat-option>
+          </mat-select>
+          <input type="phone" name="phone" id="phone" formControlName="phone" placeholder="(99) 9999-9999">
+        </div>
+      </div>
+      <div class="dialog__field">
+        <label for="email">E-mail corporativo</label>
+        <input type="text" name="email" id="email" formControlName="email" placeholder="Digite seu e-mail...">
+        <div *ngIf="f.email.errors?.pattern && f.email.touched" class="error-message">
+          Por favor, digite um e-mail válido.
+        </div>
+        <div *ngIf="f.email.errors?.required && f.email.touched" class="error-message">
+          O campo e-mail é obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="dialog__group">
+      <div class="dialog__field">
+        <label for="profile">Perfil de acesso</label>
+        <mat-select class="profile__select" name="profile" id="profile" formControlName="profile" [formControl]="toppings" multiple>
+          <mat-option value="supervisor">Supervisor</mat-option>
+          <mat-option value="analyst">Analista</mat-option>
+          <mat-option value="trainee">Estagiário</mat-option>
+          <mat-option value="consultant">Consultor</mat-option>
+        </mat-select>
+        <div *ngIf="f.profile.errors?.required && f.profile.touched" class="error-message">
+          O campo perfil de acesso é obrigatório.
+        </div>
+      </div>
+    </div>
+    <div class="dialog__group">
+      <div class="dialog__field">
+        <label for="language">Idioma</label>
+        <mat-select class="language__select" name="language" id="language" formControlName="language">
+          <mat-option value="portuguese">Português</mat-option>
+          <mat-option value="english">Inglês</mat-option>
+          <mat-option value="spanish">Espanhol</mat-option>
+          <mat-option value="italian">Italiano</mat-option>
+        </mat-select>
+        <div *ngIf="f.language.errors?.required && f.language.touched" class="error-message">
+          O campo idioma é obrigatório.
+        </div>
+      </div>
+      <div class="dialog__field">
+        <label for="contact">Contato preferencial <span class="optional">- Opcional</span></label>
+        <div class="contact">
+          <div class="contact__group">
+            <input type="radio" id="email-radio" name="fav_contact" formControlName="fav_contact" value="email">
+            <label for="email">E-mail</label><br>
+          </div>
+          <div class="contact__group">
+            <input type="radio" id="phone-radio" name="fav_contact" formControlName="fav_contact" value="phone">
+            <label for="phone">Telefone</label><br>
+          </div>
+          <div class="contact__group">
+            <input type="radio" id="all-radio" name="fav_contact" formControlName="fav_contact" value="all">
+            <label for="all">Todos</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <mat-dialog-actions class="dialog__actions">
+      <button class="dialog__close" mat-button (click)="openConfirmDialog()">Fechar</button>
+      <button type="submit" class="dialog__send" mat-button cdkFocusInitial>
+        Enviar convite
+      </button>
+    </mat-dialog-actions>
+  </form>
+</div>

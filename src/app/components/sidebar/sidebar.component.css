@@ -16,6 +16,7 @@
 .sidebar__image {
   width: 1.5rem;
   flex-grow: 1;
+  cursor: pointer;
 }
 
 .sidebar__image--larger {

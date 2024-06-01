@@ -30,6 +30,7 @@ export class TableComponent implements AfterViewInit {
   displayedColumns: string[] = ['user', 'status', 'creation_date', 'last_acess', 'action'];
   dataSource: MatTableDataSource<UserData>;
   users: UserData[] = [];
+  status: string[] = ['Ativo', 'Pendente', 'Bloqueado'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -42,7 +43,7 @@ export class TableComponent implements AfterViewInit {
   addData(data: any) {
     this.users.push({
       name: data.name,
-      status: `${'Ativo'}`,
+      status: this.status[Math.floor(Math.random() * this.status.length)],
       creation_date: new Date(),
       last_acess: new Date(),
       surname: data.surname,

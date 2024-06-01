@@ -104,3 +104,7 @@ tr:nth-child(even) {
   width: 1.4rem;
   cursor: pointer;
 }
+
+.no-result {
+  padding: 1rem;
+}

@@ -27,7 +27,7 @@ export interface UserData {
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements AfterViewInit {
-  displayedColumns: string[] = ['name', 'status', 'creation_date', 'last_acess', 'action'];
+  displayedColumns: string[] = ['user', 'status', 'creation_date', 'last_acess', 'action'];
   dataSource: MatTableDataSource<UserData>;
   users: UserData[] = [];
 

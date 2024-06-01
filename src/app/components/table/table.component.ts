@@ -58,6 +58,8 @@ export class TableComponent implements AfterViewInit {
       fav_contact: data.fav_contact
     });
     this.dataSource.data = this.users;
+
+    console.log(this.dataSource.data)
   }
 
   ngAfterViewInit() {

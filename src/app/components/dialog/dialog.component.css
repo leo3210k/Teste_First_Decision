@@ -54,7 +54,8 @@
 }
 
 .phone__select {
-  width: 50px;
+  width: auto;
+  min-width: 60px;
 }
 
 .phone__field {
@@ -64,6 +65,7 @@
 }
 
 .phone__field input {
+  max-width: 250px;
   border: none;
 }
 

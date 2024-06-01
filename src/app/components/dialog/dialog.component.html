@@ -27,7 +27,7 @@
           <mat-select class="phone__select" [(value)]="selectedCountry">
             <mat-option *ngFor="let country of countries" [value]="country">
               <img [src]="country.flag" alt="{{ country.name }}" width="24" height="16" style="margin-right: 8px;">
-              {{ country.name }} ({{ country.code }})
+              ({{ country.code }})
             </mat-option>
           </mat-select>
           <input type="phone" name="phone" id="phone" formControlName="phone" placeholder="(99) 9999-9999">

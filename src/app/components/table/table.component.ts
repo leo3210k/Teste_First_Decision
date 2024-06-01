@@ -36,6 +36,22 @@ export class TableComponent {
     this.dataSource = new MatTableDataSource(this.users);
   }
 
+  addData(data: any) {
+    this.users.push({
+      name: data.name,
+      status: `${'Ativo'}`,
+      creation_date: new Date(),
+      last_acess: new Date(),
+      surname: data.surname,
+      phone: data.phone,
+      email: data.email,
+      profile: data.profile,
+      language: data.language,
+      fav_contact: data.fav_contact
+    });
+    this.dataSource.data = this.users;
+  }
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;

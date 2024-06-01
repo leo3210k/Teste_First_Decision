@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainComponent } from './components/main/main.component';
+import { TableComponent } from './components/table/table.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { DialogButtonComponent } from './components/dialog/dialog-button.component';
+import { ConfirmDialogComponent } from './components/dialog/dialog-confirm.component';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -18,6 +22,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AppendPipe } from './pipes/append.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HeaderComponent,
     SidebarComponent,
     MainComponent,
+    TableComponent,
+    DialogComponent,
+    DialogButtonComponent,
+    ConfirmDialogComponent,
+    AppendPipe
   ],
   imports: [
     BrowserModule,

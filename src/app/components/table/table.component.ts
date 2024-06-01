@@ -1,9 +1,10 @@
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatPaginator, MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { CustomPaginator } from './custom-paginator';
 
 export interface UserData {
   name: string;
@@ -24,7 +25,10 @@ export interface UserData {
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css']
+  styleUrls: ['./table.component.css'],
+  providers: [
+    { provide: MatPaginatorIntl, useClass: CustomPaginator }
+  ],
 })
 export class TableComponent implements AfterViewInit {
   displayedColumns: string[] = ['user', 'status', 'creation_date', 'last_acess', 'action'];

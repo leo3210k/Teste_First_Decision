@@ -45,12 +45,27 @@
 .dialog__field select,
 .dialog__field .profile__select,
 .dialog__field .language__select,
-.dialog__field .phone__field {
+.dialog__field .phone__field,
+.dialog__field .email-field { 
   padding: 0.8rem 1rem;
 
   border: 1px solid var(--athens-gray);
   border-radius: 0.6rem;
   background-color: var(--white);
+}
+
+.email-field {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.email-field input {
+  border: none;
+}
+
+.email-field img {
+  width: 1.5rem;
 }
 
 .phone__select {

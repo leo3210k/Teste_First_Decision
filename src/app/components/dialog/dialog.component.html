@@ -35,7 +35,10 @@
       </div>
       <div class="dialog__field">
         <label for="email">E-mail corporativo</label>
-        <input type="text" name="email" id="email" formControlName="email" placeholder="Ex: nome@gmail.com">
+        <div class="email-field">
+          <img src="assets/icons/form/letter.svg" alt="letter">
+          <input type="text" name="email" id="email" formControlName="email" placeholder="Ex: nome@gmail.com">
+        </div>
         <div *ngIf="f.email.errors?.pattern && f.email.touched" class="error-message">
           Por favor, digite um e-mail válido.
         </div>

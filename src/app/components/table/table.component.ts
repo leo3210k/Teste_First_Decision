@@ -18,13 +18,16 @@ export interface UserData {
   fav_contact: string;
 }
 
+/**
+ * @title Data table with sorting, pagination, and filtering.
+ */
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent {
-  displayedColumns: string[] = ['user', 'status', 'creation_date', 'last_acess', 'action'];
+export class TableComponent implements AfterViewInit {
+  displayedColumns: string[] = ['name', 'status', 'creation_date', 'last_acess', 'action'];
   dataSource: MatTableDataSource<UserData>;
   users: UserData[] = [];
 
